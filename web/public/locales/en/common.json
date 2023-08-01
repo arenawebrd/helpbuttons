@@ -183,7 +183,7 @@
     "tags": "Network keywords",
     "tagsPlaceHolder": "Food, tools, toys...",
     "locationLabel": "Network Location",
-    "centerOfMap": "Select the central place of your network",
+    "centerOfMap": "Frame the selected area for your network",
     "selectMapStyle": "Choose map style",
     "locationExplain": "Your network place and radius would be centered everytime someone loads the app",
     "tagsExplain": "Your network keywords will make easier to search for topics and to know what's your network about",
