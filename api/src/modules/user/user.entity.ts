@@ -7,7 +7,7 @@ import { UserCredential } from '../user-credential/user-credential.entity';
 
 @Entity()
 @Exclude()
-export class User extends BaseEntity {
+export class UserEntity extends BaseEntity {
   @Expose()
   @PrimaryColumn({
     type: 'char',
@@ -117,6 +117,15 @@ export class User extends BaseEntity {
 
 export interface UserRelations {
   // describe navigational properties here
+}
+
+
+export class User extends UserEntity{
+
+}
+
+export class UserProfile extends UserEntity{
+
 }
 
 export type UserWithRelations = User & UserRelations;
