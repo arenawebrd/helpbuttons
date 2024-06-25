@@ -39,6 +39,7 @@ export class StorageService {
 
     const pathfilename = `${uploadDir}${fileImageName}`
     return sharp(buffer)
+    .keepExif()
     .resize(1024)
     .toFile(pathfilename)
     .then((result :string) => {
@@ -94,21 +95,6 @@ export class StorageService {
     if (filenames.length > 0) {
       return filenames.map((filename) => this.delete(filename));
     }
-  }
-
-  fixRotationOfFile(file) {
-    let loadImage = require('blueimp-load-image')
-    return new Promise((resolve) => {
-      loadImage(file, (img) => {
-        img.toBlob(
-          (blob) => {
-            resolve(blob)
-          },
-          'image/jpeg'
-        )
-      }, { orientation: true }
-      )
-    })
   }
 
 }
