@@ -39,8 +39,8 @@ export class StorageService {
 
     const pathfilename = `${uploadDir}${fileImageName}`
     return sharp(buffer)
-    .keepExif()
     .resize(1024)
+    .withMetadata()
     .toFile(pathfilename)
     .then((result :string) => {
       const fileName = `${getFilesRoute}${fileImageName}`;
