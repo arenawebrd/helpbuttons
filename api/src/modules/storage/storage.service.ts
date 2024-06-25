@@ -95,4 +95,20 @@ export class StorageService {
       return filenames.map((filename) => this.delete(filename));
     }
   }
+
+  fixRotationOfFile(file) {
+    let loadImage = require('blueimp-load-image')
+    return new Promise((resolve) => {
+      loadImage(file, (img) => {
+        img.toBlob(
+          (blob) => {
+            resolve(blob)
+          },
+          'image/jpeg'
+        )
+      }, { orientation: true }
+      )
+    })
+  }
+
 }
