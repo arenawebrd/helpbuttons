@@ -152,6 +152,12 @@ $map-btns-size-mobile: 30px;
 
 }
 
+.pigeon-map__hex-element {
+
+    // height: 20px;
+
+}
+
 .pigeon-map__hex-wrap {
 
     top: 50%;
@@ -164,6 +170,16 @@ $map-btns-size-mobile: 30px;
     // line-height: $line-height-;
 
 }
+.pigeon-map__hex-wrap--selected {
+
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 70px;
+    gap: 5px;
+    position: relative;
+    left: -0%;
+
+}
 
 .pigeon-map__hex-wrap--selected::before {
     content: "";
@@ -174,12 +190,12 @@ $map-btns-size-mobile: 30px;
     animation: createBox .25s;
     // width: 100%;
     // padding-top: 100%;
-    width: 300%;
-    padding-top: 300%; /* This creates a square that scales to cover the height */
+    // width: 300%;
+    padding: calc(10px + 60%);
     background-color: $color-white;
     border-radius: 50%; /* This makes the square a circle */
     z-index: -1;
-    transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    // transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   }
 

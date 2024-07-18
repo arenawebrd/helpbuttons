@@ -6392,10 +6392,6 @@ hr {
   flex-wrap: wrap;
 }
 
-.pigeon-map__hex-element {
-  flex: 0 1 33%;
-}
-
 .pigeon-map__hex-info--unselect {
   display: flex;
   justify-content: center; /* Horizontally aligns children at the center */
@@ -6403,7 +6399,8 @@ hr {
   height: 100%; /* Or any specific height */
   flex-wrap: nowrap;
   margin-left: auto;
-  width: 4.5rem;
+  width: 4rem;
+  left: -0.8rem;
   position: relative;
 }
 
@@ -6424,31 +6421,44 @@ hr {
   text-orientation: mixed !important;
 }
 
-.pigeon-map__hex-wrap {
-  transform: translateX(20%) translateY(-50%);
-  max-height: 100px;
-  gap: 5px;
+.pigeon-map__custom-block {
   display: flex;
   position: relative;
-  left: -30%;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.pigeon-map__hex-wrap {
+  top: 50%;
+  transform: translateX(20%) translateY(-50%);
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+.pigeon-map__hex-wrap--selected {
+  display: flex;
   flex-wrap: wrap;
+  max-height: 70px;
+  gap: 5px;
+  position: relative;
+  left: 0%;
 }
 
 .pigeon-map__hex-wrap--selected::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 50%; /* Adjusted to start from the middle of the div */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); /* Center the circle both horizontally and vertically */
   animation: createBox 0.25s;
-  width: 100px;
-  height: 100px;
-  /* padding: 10px; */
+  padding: calc(10px + 60%);
   background-color: #fff;
-  border-radius: 50%;
+  border-radius: 50%; /* This makes the square a circle */
   z-index: -1;
-  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 @keyframes createBox {
