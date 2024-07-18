@@ -375,6 +375,12 @@
   width: 100%;
 }
 
+.checkbox__label--square {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .checkbox__filter-label {
   display: block;
   width: auto;
@@ -1119,6 +1125,9 @@
 .form__input-subtitle {
   display: flex;
   justify-content: space-between;
+}
+.form__input-subtitle a {
+  text-decoration: underline;
 }
 
 .form__input-subtitle--text, .form__input-subtitle--error {
@@ -6383,6 +6392,10 @@ hr {
   flex-wrap: wrap;
 }
 
+.pigeon-map__hex-element {
+  flex: 0 1 33%;
+}
+
 .pigeon-map__hex-info--unselect {
   display: flex;
   justify-content: center; /* Horizontally aligns children at the center */
@@ -6390,8 +6403,7 @@ hr {
   height: 100%; /* Or any specific height */
   flex-wrap: nowrap;
   margin-left: auto;
-  width: 4rem;
-  left: -0.8rem;
+  width: 4.5rem;
   position: relative;
 }
 
@@ -6412,35 +6424,29 @@ hr {
   text-orientation: mixed !important;
 }
 
-.pigeon-map__custom-block {
+.pigeon-map__hex-wrap {
+  transform: translateX(20%) translateY(-50%);
+  max-height: 100px;
+  gap: 5px;
   display: flex;
   position: relative;
+  left: -30%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.pigeon-map__hex-wrap {
-  top: 50%;
-  transform: translateX(20%) translateY(-50%);
-  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  left: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .pigeon-map__hex-wrap--selected::before {
   content: "";
   position: absolute;
-  top: 50%; /* Adjusted to start from the middle of the div */
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the circle both horizontally and vertically */
+  transform: translate(-50%, -50%);
   animation: createBox 0.25s;
-  width: 300%;
-  padding-top: 300%; /* This creates a square that scales to cover the height */
+  width: 100px;
+  height: 100px;
+  /* padding: 10px; */
   background-color: #fff;
-  border-radius: 50%; /* This makes the square a circle */
+  border-radius: 50%;
   z-index: -1;
   transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }

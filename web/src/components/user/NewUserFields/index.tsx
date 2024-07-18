@@ -1,4 +1,5 @@
 import { FieldCheckbox } from 'elements/Fields/FieldCheckbox';
+import { FieldCheckboxSquare } from 'elements/Fields/FieldCheckboxSquare';
 import FieldPassword from 'elements/Fields/FieldPassword';
 import FieldTags from 'elements/Fields/FieldTags';
 import FieldText from 'elements/Fields/FieldText';
@@ -75,7 +76,11 @@ export default function NewUserFields({
         placeholder={t('user.namePlaceHolder')}
         validationError={errors.name}
         {...register('name', { required: true })}
-      ></FieldText>
+      >
+       <div className='form__explain'>{t('user.username')}{watch(
+          'username',
+        )}@{hostname}</div>
+      </FieldText>
       <FieldText
         name="username"
         label={`${t('user.username')} ${watch(
@@ -120,12 +125,11 @@ export default function NewUserFields({
           minLength: 8,
         })}
       ></FieldPassword> */}
-      {t('user.acceptPrivacyPolicy')}<Link href="/Faqs">{t('user.privacyPolicyLink')}</Link>
-      <FieldCheckbox
+      {/* <FieldCheckboxSquare
         name="acceptPrivacyPolicy"
         // defaultValue={watch('acceptPrivacyPolicy')}
-        text={t('user.pressToAccept') }
-        textOn={t('user.iAccept')}
+        text={t('user.acceptPrivacyPolicy')}
+        textOn={t('user.acceptPrivacyPolicy')}
         onChanged={(value) => {
           console.log(value)
           if(value)
@@ -138,7 +142,7 @@ export default function NewUserFields({
         }
         validationError={errors.acceptPrivacyPolicy ? {message: t('user.pleaseAcceptPrivacy')} : null}
         {...register('acceptPrivacyPolicy')}
-      />
+      /> */}
       
       {/* <Accordion title={t('user.signupOptions')}>
         <FieldLanguagePick onChange={(value) => setValue('locale', value)} explain={t('user.pickLanguageExplain')} defaultValue={getLocale()}/>

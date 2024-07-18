@@ -133,6 +133,15 @@ export default function Signup() {
                 contentAlignment={ContentAlignment.center}
                 isSubmitting={isSubmitting}
               />
+              <div className="form__input-subtitle">
+                <div className="form__input-subtitle-side">
+                </div>
+                <div className="form__input-subtitle-side">
+                    <label className="form__input-subtitle--text">
+                    {t('user.acceptPrivacyPolicy')}<Link href="/Faqs">{t('user.privacyPolicyLink')}</Link>
+                    </label>
+                </div>
+              </div>
             </div>
             <div className="popup__link">
               <Link href={`/Login?${params.toString()}`}>

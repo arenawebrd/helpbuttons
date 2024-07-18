@@ -27,6 +27,12 @@ $checkbox-color-gray-border: $color-gray-border;
   width: 100%;
 }
 
+.checkbox__label--square {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .checkbox__filter-label {
   display: block;
   width: auto;

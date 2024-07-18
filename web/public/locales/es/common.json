@@ -42,7 +42,7 @@
     "needLogo": "Antes de seleccionar un lugar, por favor añade tu logo",
     "needPlace": "Por favor, selecciona en qué zona se situa tu Red",
     "latestActivity": "Últimas actividads",
-    "installButton": "Instalar"
+    "installButton": "Instalar aplicación"
   },
   "feed": {
     "write": "Escribir mensaje",
@@ -238,7 +238,7 @@
     "confirmDeleting": "¡Confirma que deseas eliminar todos tus datos!",
     "securityAndPrivacy": "Seguridad y privacidad",
     "insertedSignUpTitle": "Añade tus datos de contacto o pulsa si",
-    "acceptPrivacyPolicy": "He leído y acepto la ",
+    "acceptPrivacyPolicy": "Al unirte aceptas la ",
     "privacyPolicyLink": "política de privacidad",
     "pressToAccept": "Haga clic aquí para aceptar",
     "iAccept": "Acepto",
