@@ -11,6 +11,7 @@ export const ImageLoader = ({ src, alt, ...props }) => {
   return (
     <>
     <div className="loading__img" style={{ display: loader }} ></div>
+      <div     onClick={(e) => console.log('I HAVE BEEN CLICKED')}>
       <Image
         src={src}
         alt={alt}
@@ -21,6 +22,7 @@ export const ImageLoader = ({ src, alt, ...props }) => {
         onError={() => setReveal(true)}
         onLoadingComplete={() => setReveal(true)}
       />
+      </div>
     </>
   );
 };
